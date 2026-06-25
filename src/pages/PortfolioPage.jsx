@@ -9,6 +9,7 @@ import { getPhotos, uploadPhoto, deletePhoto } from '../utils/supabase.js'
  * Resize image via canvas so files stay small.
  */
 function compressImage(file) {
+  const name = file.name
   return new Promise((resolve) => {
     const reader = new FileReader()
     reader.onload = () => {
@@ -27,7 +28,7 @@ function compressImage(file) {
         const ctx = canvas.getContext('2d')
         ctx.drawImage(img, 0, 0, width, height)
         canvas.toBlob((blob) => {
-          resolve(blob)
+          resolve({ blob, name })
         }, 'image/jpeg', 0.75)
       }
       img.src = reader.result
@@ -62,8 +63,8 @@ export default function PortfolioPage() {
 
     for (const file of files) {
       try {
-        const compressed = await compressImage(file)
-        await uploadPhoto(compressed)
+        const { blob, name } = await compressImage(file)
+        await uploadPhoto(blob, name)
       } catch (err) {
         console.error('Upload failed:', err)
         alert('上传失败：' + err.message)

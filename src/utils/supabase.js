@@ -37,8 +37,9 @@ export function getPhotoUrl(fileName) {
 }
 
 /** Upload a photo file (blob) to Supabase */
-export async function uploadPhoto(file) {
-  const fileName = `${Date.now()}_${file.name.replace(/[^a-zA-Z0-9._-]/g, '_')}`
+export async function uploadPhoto(file, originalName) {
+  const safeName = originalName.replace(/[^a-zA-Z0-9._-]/g, '_')
+  const fileName = `${Date.now()}_${safeName}`
 
   const { data, error } = await supabase.storage
     .from(BUCKET)
