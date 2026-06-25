@@ -2,10 +2,12 @@ import { useState, useEffect, useCallback } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { ChevronLeft, ChevronRight, Pause, Play } from 'lucide-react'
 
+const BASE = import.meta.env.BASE_URL
+
 const PHOTOS = [
-  { src: '/images/photos/photo1.jpg', alt: '照片 1' },
-  { src: '/images/photos/photo2.jpg', alt: '照片 2' },
-  { src: '/images/photos/photo3.jpg', alt: '照片 3' },
+  { src: `${BASE}images/photos/photo1.jpg`, alt: '照片 1' },
+  { src: `${BASE}images/photos/photo2.jpg`, alt: '照片 2' },
+  { src: `${BASE}images/photos/photo3.jpg`, alt: '照片 3' },
 ]
 
 export default function PhotoWall() {

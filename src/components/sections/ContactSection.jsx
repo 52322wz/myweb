@@ -1,3 +1,5 @@
+const BASE = import.meta.env.BASE_URL
+
 export default function ContactSection() {
   return (
     <section className="px-6 md:px-10 py-8 border-t border-black/5 dark:border-white/10">
@@ -38,7 +40,7 @@ export default function ContactSection() {
         >
           <div className="w-10 h-10 rounded-xl overflow-hidden flex-shrink-0
                           group-hover/github:scale-105 transition-transform">
-            <img src="/images/icons/github.jpg" alt="GitHub" className="w-full h-full object-cover" />
+            <img src={`${BASE}images/icons/github.jpg`} alt="GitHub" className="w-full h-full object-cover" />
           </div>
           <div>
             <p className="text-sm font-medium text-black dark:text-white">GitHub</p>
@@ -52,7 +54,7 @@ export default function ContactSection() {
                         shadow-sm hover:shadow-md transition-shadow overflow-hidden">
           <div className="flex items-center gap-3.5 p-3.5 cursor-pointer">
             <div className="w-10 h-10 rounded-xl overflow-hidden flex-shrink-0">
-              <img src="/images/icons/qq.jpg" alt="QQ" className="w-full h-full object-cover" />
+              <img src={`${BASE}images/icons/qq.jpg`} alt="QQ" className="w-full h-full object-cover" />
             </div>
             <div>
               <p className="text-sm font-medium text-black dark:text-white">QQ</p>
@@ -70,7 +72,7 @@ export default function ContactSection() {
                           lg:max-h-0 lg:group-hover/qq:max-h-[500px]
                           max-lg:max-h-[500px]">
             <div className="px-3.5 pb-4">
-              <img src="/images/qr/qq.jpg" alt="QQ 二维码" className="w-full rounded-xl bg-white" />
+              <img src={`${BASE}images/qr/qq.jpg`} alt="QQ 二维码" className="w-full rounded-xl bg-white" />
             </div>
           </div>
         </div>
@@ -81,7 +83,7 @@ export default function ContactSection() {
                         shadow-sm hover:shadow-md transition-shadow overflow-hidden">
           <div className="flex items-center gap-3.5 p-3.5 cursor-pointer">
             <div className="w-10 h-10 rounded-xl overflow-hidden flex-shrink-0">
-              <img src="/images/icons/wechat.jpg" alt="微信" className="w-full h-full object-cover" />
+              <img src={`${BASE}images/icons/wechat.jpg`} alt="微信" className="w-full h-full object-cover" />
             </div>
             <div>
               <p className="text-sm font-medium text-black dark:text-white">微信</p>
@@ -99,7 +101,7 @@ export default function ContactSection() {
                           lg:max-h-0 lg:group-hover/wx:max-h-[500px]
                           max-lg:max-h-[500px]">
             <div className="px-3.5 pb-4">
-              <img src="/images/qr/wechat.jpg" alt="微信二维码" className="w-full rounded-xl bg-white" />
+              <img src={`${BASE}images/qr/wechat.jpg`} alt="微信二维码" className="w-full rounded-xl bg-white" />
             </div>
           </div>
         </div>
