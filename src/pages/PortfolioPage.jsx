@@ -3,11 +3,10 @@ import { Link } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Plus, X, ArrowLeft, ImageIcon, Upload } from 'lucide-react'
 import { useAuth } from '../contexts/AuthContext.jsx'
-import { getPhotos, savePhoto, removePhoto } from '../utils/storage.js'
+import { getPhotos, uploadPhoto, deletePhoto } from '../utils/supabase.js'
 
 /**
- * Resize image via canvas so base64 stays small enough for localStorage.
- * Max dimension 1200px, JPEG quality 0.75.
+ * Resize image via canvas so files stay small.
  */
 function compressImage(file) {
   return new Promise((resolve) => {
@@ -27,10 +26,9 @@ function compressImage(file) {
         canvas.height = height
         const ctx = canvas.getContext('2d')
         ctx.drawImage(img, 0, 0, width, height)
-        resolve({
-          dataUrl: canvas.toDataURL('image/jpeg', 0.75),
-          name: file.name,
-        })
+        canvas.toBlob((blob) => {
+          resolve(blob)
+        }, 'image/jpeg', 0.75)
       }
       img.src = reader.result
     }
@@ -41,13 +39,20 @@ function compressImage(file) {
 export default function PortfolioPage() {
   const { isAuthenticated } = useAuth()
   const [photos, setPhotos] = useState([])
+  const [loading, setLoading] = useState(true)
   const [selected, setSelected] = useState(null)
   const [uploading, setUploading] = useState(false)
   const inputRef = useRef(null)
 
-  // Load photos from storage on mount
+  // Load photos from Supabase
+  const loadPhotos = async () => {
+    const list = await getPhotos()
+    setPhotos(list)
+    setLoading(false)
+  }
+
   useEffect(() => {
-    setPhotos(getPhotos())
+    loadPhotos()
   }, [])
 
   const handleUpload = async (e) => {
@@ -56,29 +61,28 @@ export default function PortfolioPage() {
     setUploading(true)
 
     for (const file of files) {
-      const compressed = await compressImage(file)
-      const photo = {
-        id: Date.now() + '_' + Math.random().toString(36).slice(2, 8),
-        src: compressed.dataUrl,
-        name: compressed.name,
-        uploadedAt: new Date().toISOString(),
-      }
-      const ok = savePhoto(photo)
-      if (ok) {
-        setPhotos(prev => [...prev, photo])
-      } else {
-        alert('存储空间不足，请删除一些旧照片后重试')
-        break
+      try {
+        const compressed = await compressImage(file)
+        await uploadPhoto(compressed)
+      } catch (err) {
+        console.error('Upload failed:', err)
+        alert('上传失败：' + err.message)
       }
     }
 
     setUploading(false)
     e.target.value = ''
+    await loadPhotos()
   }
 
-  const handleRemove = (id) => {
-    removePhoto(id)
-    setPhotos(prev => prev.filter(p => p.id !== id))
+  const handleRemove = async (name) => {
+    try {
+      await deletePhoto(name)
+      setPhotos(prev => prev.filter(p => p.name !== name))
+    } catch (err) {
+      console.error('Delete failed:', err)
+      alert('删除失败：' + err.message)
+    }
   }
 
   return (
@@ -100,7 +104,7 @@ export default function PortfolioPage() {
           </h1>
         </div>
         <span className="text-xs text-black/30 dark:text-white/30">
-          {photos.length} 张
+          {loading ? '加载中…' : `${photos.length} 张`}
         </span>
       </div>
 
@@ -138,7 +142,7 @@ export default function PortfolioPage() {
                 {uploading ? '正在上传…' : '上传照片'}
               </span>
               <span className="text-xs text-black/25 dark:text-white/25">
-                JPG / PNG，自动压缩至合适尺寸
+                JPG / PNG，云端存储，所有人可见
               </span>
             </button>
             <input
@@ -153,7 +157,12 @@ export default function PortfolioPage() {
         )}
 
         {/* --- Photo Grid --- */}
-        {photos.length > 0 ? (
+        {loading ? (
+          <div className="text-center py-20">
+            <div className="w-8 h-8 rounded-full border-2 border-black/10 dark:border-white/10
+                            border-t-blue-500 animate-spin mx-auto" />
+          </div>
+        ) : photos.length > 0 ? (
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
             <AnimatePresence>
               {photos.map((photo, i) => (
@@ -172,15 +181,14 @@ export default function PortfolioPage() {
                     alt={photo.name}
                     className="w-full h-full object-cover transition-transform duration-700
                                group-hover:scale-105"
+                    loading="lazy"
                   />
-                  {/* Overlay on hover */}
                   <div className="absolute inset-0 bg-black/0 group-hover:bg-black/5
                                   transition-colors duration-300" />
 
-                  {/* Delete (admin only) */}
                   {isAuthenticated && (
                     <button
-                      onClick={(e) => { e.stopPropagation(); handleRemove(photo.id) }}
+                      onClick={(e) => { e.stopPropagation(); handleRemove(photo.name) }}
                       className="absolute top-2 right-2 w-7 h-7 rounded-full
                                  bg-black/50 backdrop-blur-sm
                                  flex items-center justify-center
@@ -196,7 +204,6 @@ export default function PortfolioPage() {
             </AnimatePresence>
           </div>
         ) : (
-          /* Empty state */
           <div className="text-center py-20">
             <div className="w-16 h-16 rounded-2xl bg-black/5 dark:bg-white/5
                             flex items-center justify-center mx-auto mb-4">
@@ -232,7 +239,6 @@ export default function PortfolioPage() {
               className="max-w-full max-h-[85vh] rounded-2xl shadow-2xl object-contain"
               onClick={e => e.stopPropagation()}
             />
-            {/* Close button */}
             <button
               className="absolute top-6 right-6 w-10 h-10 rounded-full bg-white/15
                          flex items-center justify-center text-white
@@ -241,7 +247,6 @@ export default function PortfolioPage() {
             >
               <X size={20} />
             </button>
-            {/* Photo name */}
             <p className="absolute bottom-6 left-1/2 -translate-x-1/2
                           text-sm text-white/50 bg-black/30 backdrop-blur-sm
                           rounded-full px-4 py-1.5">

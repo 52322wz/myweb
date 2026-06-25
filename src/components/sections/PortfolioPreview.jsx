@@ -1,20 +1,16 @@
 import { Link } from 'react-router-dom'
 import { Images } from 'lucide-react'
 import { useEffect, useState } from 'react'
-import { getPhotos } from '../../utils/storage.js'
+import { getPhotos } from '../../utils/supabase.js'
 
 export default function PortfolioPreview() {
   const [photos, setPhotos] = useState([])
 
-  const load = () => setPhotos(getPhotos())
-
   useEffect(() => {
-    load()
-    window.addEventListener('focus', load)
-    return () => window.removeEventListener('focus', load)
+    getPhotos().then(setPhotos)
   }, [])
 
-  const latest = photos.length > 0 ? photos[photos.length - 1] : null
+  const latest = photos.length > 0 ? photos[0] : null
 
   return (
     <section className="px-6 md:px-10 py-10">
@@ -33,7 +29,6 @@ export default function PortfolioPreview() {
         <div className="relative aspect-[16/10] overflow-hidden
                         bg-gradient-to-br from-gray-50 to-gray-100
                         dark:from-[#1c1c1e] dark:to-[#2c2c2e]">
-          {/* Latest photo as background */}
           {latest && (
             <img
               src={latest.src}
@@ -42,17 +37,14 @@ export default function PortfolioPreview() {
                          group-hover:scale-105 transition-transform duration-700"
             />
           )}
-          {/* Overlay */}
           <div className={`absolute inset-0 flex flex-col items-center justify-center gap-3
                            transition-all duration-500
                            ${latest
                              ? 'bg-black/30 group-hover:bg-black/25'
                              : 'group-hover:from-blue-50/50 group-hover:to-purple-50/50'
                            }`}>
-            <div className={`w-16 h-16 rounded-2xl
-                            flex items-center justify-center
-                            shadow-sm
-                            group-hover:scale-105 transition-transform duration-500
+            <div className={`w-16 h-16 rounded-2xl flex items-center justify-center
+                            shadow-sm group-hover:scale-105 transition-transform duration-500
                             ${latest
                               ? 'bg-white/20 backdrop-blur-sm'
                               : 'bg-white dark:bg-[#2c2c2e] border border-black/5 dark:border-white/10'
@@ -70,12 +62,11 @@ export default function PortfolioPreview() {
           </div>
         </div>
 
-        {/* Bottom bar */}
         <div className="flex items-center justify-between px-5 py-3
                         border-t border-black/5 dark:border-white/10
                         bg-white/50 dark:bg-[#1c1c1e]/50">
           <span className="text-xs text-black/30 dark:text-white/30">
-            {photos.length > 0 ? '点击浏览全部作品' : '暂无内容'}
+            {photos.length > 0 ? '云端存储 · 所有人可见' : '暂无内容'}
           </span>
           <span className="text-xs text-blue-500 font-medium
                            group-hover:translate-x-0.5 transition-transform">
