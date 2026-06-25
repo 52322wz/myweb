@@ -1,0 +1,27 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(//f//**)",
+      "Bash(npm -v)",
+      "Bash(npm config *)",
+      "Bash(mkdir -p /f/npm-global /f/npm-cache && npm config set prefix \"F:\\\\\\\\npm-global\" && npm config set cache \"F:\\\\\\\\npm-cache\" && echo \"=== 更新后配置 ===\" && npm config list 2>&1)",
+      "Bash(npm install *)",
+      "Bash(npm run *)",
+      "Bash(node -e \"const l = require\\('lucide-react'\\); const names = Object.keys\\(l\\).filter\\(k => k.toLowerCase\\(\\).includes\\('git'\\) || k.toLowerCase\\(\\).includes\\('link'\\) || k.toLowerCase\\(\\).includes\\('twit'\\)\\); console.log\\(names\\);\")",
+      "Bash(node -e \"const l = require\\('lucide-react'\\); const names = Object.keys\\(l\\).filter\\(k => /globe|github|twitter|linkedin/i.test\\(k\\)\\); console.log\\('Brand matches:', names\\);\")",
+      "Bash(node -e \"const l = require\\('lucide-react'\\); const names = Object.keys\\(l\\).filter\\(k => /^\\(?!Lucide\\)[A-Z][a-z]+$/.test\\(k\\)\\); const wanted = ['Globe','Link','AtSign','Hash','MessageCircle','Code','Codepen','Container','Network','Share','User','Users','Star','Heart','Send','Rss','FileText','BookOpen']; wanted.forEach\\(w => console.log\\(w, ':', w in l\\)\\);\")",
+      "WebFetch(domain:www.cheese666.xyz)",
+      "Bash(npx vite *)",
+      "Bash(python -c \"from PIL import Image; print\\('PIL available'\\)\")",
+      "Bash(python -c ' *)",
+      "Bash(git init *)",
+      "Bash(git add *)",
+      "Bash(git commit *)",
+      "Bash(git branch *)",
+      "Bash(git config *)"
+    ],
+    "additionalDirectories": [
+      "F:\\"
+    ]
+  }
+}

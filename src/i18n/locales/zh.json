@@ -1,0 +1,160 @@
+{
+  "nav": {
+    "home": "首页",
+    "about": "关于",
+    "skills": "技能",
+    "projects": "项目",
+    "blog": "博客",
+    "contact": "联系"
+  },
+  "hero": {
+    "greeting": "你好，我是",
+    "name": "自由的小王",
+    "title": "放假的大二学生",
+    "subtitle": "热爱技术，专注于构建优雅、高性能的 Web 应用。拥有 5 年前端开发经验，致力于将创意转化为卓越的数字体验。",
+    "cta": {
+      "projects": "查看作品",
+      "contact": "17719023935"
+    }
+  },
+  "about": {
+    "title": "关于我",
+    "subtitle": "了解我的背景与经历",
+    "bio": "我是一名充满激情的全栈开发工程师，拥有计算机科学学士学位。工作之余，我热衷于开源项目、技术写作和摄影。我相信技术的力量可以改变世界，始终保持着对新技术的探索热情。",
+    "experience": "工作经历",
+    "education": "教育背景",
+    "jobs": [
+      {
+        "role": "高级前端工程师",
+        "company": "ABC 科技有限公司",
+        "period": "2022 - 至今",
+        "desc": "负责核心产品前端架构设计与开发，带领 5 人团队完成多个关键项目。"
+      },
+      {
+        "role": "前端开发工程师",
+        "company": "XYZ 互联网公司",
+        "period": "2020 - 2022",
+        "desc": "参与公司主要产品线的前端开发，使用 React 技术栈构建复杂交互界面。"
+      }
+    ],
+    "schools": [
+      {
+        "degree": "计算机科学与技术 学士",
+        "school": "某科技大学",
+        "period": "2016 - 2020"
+      }
+    ]
+  },
+  "skills": {
+    "title": "技术技能",
+    "subtitle": "我掌握的技术与工具",
+    "categories": {
+      "frontend": "前端开发",
+      "backend": "后端开发",
+      "tools": "工具与平台",
+      "other": "其他"
+    },
+    "items": [
+      "React", "Vue.js", "TypeScript", "Next.js", "Tailwind CSS",
+      "Node.js", "Express", "Python", "Django", "PostgreSQL",
+      "Git", "Docker", "AWS", "CI/CD", "Figma",
+      "Agile/Scrum", "技术写作"
+    ]
+  },
+  "projects": {
+    "title": "项目作品",
+    "subtitle": "我参与和开发的项目",
+    "viewProject": "查看项目",
+    "viewCode": "源代码",
+    "items": [
+      {
+        "title": "电商平台重构",
+        "desc": "使用 React + TypeScript 重构旧版电商平台，性能提升 60%，用户体验大幅改善。",
+        "tags": ["React", "TypeScript", "Node.js", "PostgreSQL"],
+        "image": "https://placehold.co/600x400/3b82f6/white?text=E-Commerce"
+      },
+      {
+        "title": "实时协作工具",
+        "desc": "基于 WebSocket 的实时协作文档编辑工具，支持多人同时编辑和评论。",
+        "tags": ["Next.js", "WebSocket", "Redis", "Docker"],
+        "image": "https://placehold.co/600x400/8b5cf6/white?text=Collab+Tool"
+      },
+      {
+        "title": "AI 聊天助手",
+        "desc": "集成大语言模型的智能聊天应用，支持多轮对话、文件上传和知识库检索。",
+        "tags": ["Python", "FastAPI", "React", "OpenAI API"],
+        "image": "https://placehold.co/600x400/06b6d4/white?text=AI+Chat"
+      },
+      {
+        "title": "个人博客系统",
+        "desc": "基于 Markdown 的静态博客系统，支持标签分类、全文搜索和 RSS 订阅。",
+        "tags": ["Next.js", "MDX", "Vercel"],
+        "image": "https://placehold.co/600x400/f59e0b/white?text=Blog+System"
+      }
+    ]
+  },
+  "blog": {
+    "title": "最新博客",
+    "subtitle": "我的技术分享与思考",
+    "readMore": "阅读全文",
+    "publishedOn": "发布于",
+    "posts": [
+      {
+        "slug": "react-19-new-features",
+        "title": "React 19 新特性全面解析",
+        "excerpt": "React 19 带来了 Server Components、Actions 等重量级特性，本文将逐一剖析这些新功能的使用方法与最佳实践。",
+        "date": "2026-05-15",
+        "tags": ["React", "JavaScript"]
+      },
+      {
+        "slug": "tailwind-v4-guide",
+        "title": "Tailwind CSS v4 迁移指南",
+        "excerpt": "Tailwind CSS v4 采用全新的 CSS-first 配置方式，本文详细介绍从 v3 迁移到 v4 的步骤和注意事项。",
+        "date": "2026-04-28",
+        "tags": ["CSS", "Tailwind"]
+      },
+      {
+        "slug": "nextjs-app-router",
+        "title": "Next.js App Router 深入理解",
+        "excerpt": "从 Pages Router 到 App Router 的转变不仅仅是目录结构的变化，更是一种全新的思维模式。",
+        "date": "2026-03-10",
+        "tags": ["Next.js", "React"]
+      }
+    ]
+  },
+  "contact": {
+    "title": "联系我",
+    "subtitle": "期待与你的交流",
+    "email": "邮箱地址",
+    "phone": "电话号码",
+    "location": "所在地",
+    "emailValue": "hello@example.com",
+    "phoneValue": "+86 138-0000-0000",
+    "locationValue": "中国 · 北京",
+    "github": "GitHub",
+    "linkedin": "LinkedIn",
+    "twitter": "Twitter",
+    "form": {
+      "name": "你的名字",
+      "email": "你的邮箱",
+      "message": "留言内容",
+      "send": "发送消息",
+      "placeholderName": "请输入姓名",
+      "placeholderEmail": "请输入邮箱",
+      "placeholderMessage": "请输入你想说的话..."
+    }
+  },
+  "footer": {
+    "copyright": "© 2026 张三. All rights reserved.",
+    "builtWith": "使用 React + Vite + Tailwind CSS 构建"
+  },
+  "theme": {
+    "light": "亮色模式",
+    "dark": "暗色模式"
+  },
+  "notFound": {
+    "title": "页面未找到",
+    "desc": "你访问的页面不存在",
+    "back": "返回首页"
+  }
+}

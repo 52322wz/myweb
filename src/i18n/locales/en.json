@@ -1,0 +1,160 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "skills": "Skills",
+    "projects": "Projects",
+    "blog": "Blog",
+    "contact": "Contact"
+  },
+  "hero": {
+    "greeting": "Hi, I'm",
+    "name": "John Doe",
+    "title": "Full-Stack Developer",
+    "subtitle": "Passionate about technology, focused on building elegant, high-performance web applications. With 5 years of frontend development experience, dedicated to turning ideas into exceptional digital experiences.",
+    "cta": {
+      "projects": "View Projects",
+      "contact": "Contact Me"
+    }
+  },
+  "about": {
+    "title": "About Me",
+    "subtitle": "My background and experience",
+    "bio": "I'm a passionate full-stack developer with a Bachelor's degree in Computer Science. Outside of work, I enjoy open source projects, technical writing, and photography. I believe technology can change the world and always maintain enthusiasm for exploring new technologies.",
+    "experience": "Experience",
+    "education": "Education",
+    "jobs": [
+      {
+        "role": "Senior Frontend Engineer",
+        "company": "ABC Tech Co., Ltd.",
+        "period": "2022 - Present",
+        "desc": "Responsible for core product frontend architecture design and development, leading a 5-person team to complete multiple key projects."
+      },
+      {
+        "role": "Frontend Developer",
+        "company": "XYZ Internet Company",
+        "period": "2020 - 2022",
+        "desc": "Participated in frontend development of the company's main product lines, building complex interactive interfaces with React technology stack."
+      }
+    ],
+    "schools": [
+      {
+        "degree": "B.S. in Computer Science",
+        "school": "University of Technology",
+        "period": "2016 - 2020"
+      }
+    ]
+  },
+  "skills": {
+    "title": "Skills",
+    "subtitle": "Technologies and tools I work with",
+    "categories": {
+      "frontend": "Frontend",
+      "backend": "Backend",
+      "tools": "Tools & Platforms",
+      "other": "Other"
+    },
+    "items": [
+      "React", "Vue.js", "TypeScript", "Next.js", "Tailwind CSS",
+      "Node.js", "Express", "Python", "Django", "PostgreSQL",
+      "Git", "Docker", "AWS", "CI/CD", "Figma",
+      "Agile/Scrum", "Technical Writing"
+    ]
+  },
+  "projects": {
+    "title": "Projects",
+    "subtitle": "Projects I've worked on",
+    "viewProject": "View Project",
+    "viewCode": "Source Code",
+    "items": [
+      {
+        "title": "E-Commerce Platform Redesign",
+        "desc": "Rebuilt legacy e-commerce platform with React + TypeScript, improving performance by 60% and greatly enhancing user experience.",
+        "tags": ["React", "TypeScript", "Node.js", "PostgreSQL"],
+        "image": "https://placehold.co/600x400/3b82f6/white?text=E-Commerce"
+      },
+      {
+        "title": "Real-Time Collaboration Tool",
+        "desc": "WebSocket-based real-time collaborative document editor supporting multi-user editing and commenting.",
+        "tags": ["Next.js", "WebSocket", "Redis", "Docker"],
+        "image": "https://placehold.co/600x400/8b5cf6/white?text=Collab+Tool"
+      },
+      {
+        "title": "AI Chat Assistant",
+        "desc": "Intelligent chat application integrating LLM, supporting multi-turn conversations, file uploads, and knowledge base retrieval.",
+        "tags": ["Python", "FastAPI", "React", "OpenAI API"],
+        "image": "https://placehold.co/600x400/06b6d4/white?text=AI+Chat"
+      },
+      {
+        "title": "Personal Blog System",
+        "desc": "Markdown-based static blog system supporting tag categorization, full-text search, and RSS feeds.",
+        "tags": ["Next.js", "MDX", "Vercel"],
+        "image": "https://placehold.co/600x400/f59e0b/white?text=Blog+System"
+      }
+    ]
+  },
+  "blog": {
+    "title": "Latest Posts",
+    "subtitle": "Technical articles and thoughts",
+    "readMore": "Read More",
+    "publishedOn": "Published on",
+    "posts": [
+      {
+        "slug": "react-19-new-features",
+        "title": "A Comprehensive Guide to React 19 New Features",
+        "excerpt": "React 19 brings major features like Server Components and Actions. This article breaks down each new feature with usage methods and best practices.",
+        "date": "2026-05-15",
+        "tags": ["React", "JavaScript"]
+      },
+      {
+        "slug": "tailwind-v4-guide",
+        "title": "Tailwind CSS v4 Migration Guide",
+        "excerpt": "Tailwind CSS v4 adopts a brand new CSS-first configuration approach. This article details the steps and considerations for migrating from v3 to v4.",
+        "date": "2026-04-28",
+        "tags": ["CSS", "Tailwind"]
+      },
+      {
+        "slug": "nextjs-app-router",
+        "title": "Understanding Next.js App Router in Depth",
+        "excerpt": "The shift from Pages Router to App Router is more than just a directory structure change — it's a whole new mindset.",
+        "date": "2026-03-10",
+        "tags": ["Next.js", "React"]
+      }
+    ]
+  },
+  "contact": {
+    "title": "Contact Me",
+    "subtitle": "Looking forward to connecting with you",
+    "email": "Email",
+    "phone": "Phone",
+    "location": "Location",
+    "emailValue": "hello@example.com",
+    "phoneValue": "+86 138-0000-0000",
+    "locationValue": "Beijing, China",
+    "github": "GitHub",
+    "linkedin": "LinkedIn",
+    "twitter": "Twitter",
+    "form": {
+      "name": "Your Name",
+      "email": "Your Email",
+      "message": "Message",
+      "send": "Send Message",
+      "placeholderName": "Enter your name",
+      "placeholderEmail": "Enter your email",
+      "placeholderMessage": "Enter your message..."
+    }
+  },
+  "footer": {
+    "copyright": "© 2026 John Doe. All rights reserved.",
+    "builtWith": "Built with React + Vite + Tailwind CSS"
+  },
+  "theme": {
+    "light": "Light Mode",
+    "dark": "Dark Mode"
+  },
+  "notFound": {
+    "title": "Page Not Found",
+    "desc": "The page you're looking for doesn't exist",
+    "back": "Back to Home"
+  }
+}
