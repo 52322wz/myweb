@@ -1,0 +1,19 @@
+<view class="product-card" bindtap="onTap">
+  <image class="product-img" src="{{product.images[0]}}" mode="aspectFill" lazy-load />
+  <view class="product-info">
+    <view class="product-name text-ellipsis">{{product.name}}</view>
+    <view class="product-bottom">
+      <view class="price-row">
+        <text class="price">
+          <text class="price-symbol">¥</text>
+          <text class="price-value">{{product.price}}</text>
+        </text>
+        <text class="original-price" wx:if="{{product.originalPrice}}">¥{{product.originalPrice}}</text>
+      </view>
+      <view class="sales" wx:if="{{salesText}}">已售{{salesText}}</view>
+    </view>
+  </view>
+  <view class="add-btn" wx:if="{{showAddBtn}}" catchtap="onAddToCart">
+    <text>+</text>
+  </view>
+</view>

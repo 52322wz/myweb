@@ -1,0 +1,49 @@
+<view class="login-container">
+  <!-- 顶部装饰 -->
+  <view class="header">
+    <view class="logo">🛍️</view>
+    <view class="title">晓峰酱菜</view>
+    <view class="subtitle">请选择你的身份</view>
+  </view>
+
+  <!-- 角色选择 -->
+  <view class="role-cards">
+    <view class="role-card buyer-card" bindtap="onBuyerLogin">
+      <view class="role-icon">🛒</view>
+      <view class="role-title">我是买家</view>
+      <view class="role-desc">浏览商品、下单购买</view>
+    </view>
+
+    <view class="role-card seller-card" bindtap="onSellerLogin">
+      <view class="role-icon">📊</view>
+      <view class="role-title">我是卖家</view>
+      <view class="role-desc">管理订单、查看客户</view>
+    </view>
+  </view>
+
+  <!-- 买家身份弹窗 -->
+  <view class="modal-mask" wx:if="{{showBuyerModal}}" bindtap="closeModal">
+    <view class="modal-box" catchtap="noop">
+      <view class="modal-title">告诉我你是谁</view>
+      <view class="modal-desc">方便卖家识别你的订单</view>
+      <input class="modal-input" placeholder="请输入你的姓名/昵称" value="{{buyerName}}" bindinput="onBuyerNameInput" focus maxlength="20" />
+      <view class="modal-actions">
+        <view class="btn-cancel" bindtap="closeModal">取消</view>
+        <view class="btn-confirm" bindtap="confirmBuyer">确认进入</view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 卖家密码弹窗 -->
+  <view class="modal-mask" wx:if="{{showSellerModal}}" bindtap="closeModal">
+    <view class="modal-box" catchtap="noop">
+      <view class="modal-title">卖家验证</view>
+      <view class="modal-desc">请输入管理密码</view>
+      <input class="modal-input" type="password" placeholder="请输入密码" value="{{sellerPassword}}" bindinput="onSellerPasswordInput" focus maxlength="20" />
+      <view class="modal-actions">
+        <view class="btn-cancel" bindtap="closeModal">取消</view>
+        <view class="btn-confirm" bindtap="confirmSeller">确认登录</view>
+      </view>
+    </view>
+  </view>
+</view>

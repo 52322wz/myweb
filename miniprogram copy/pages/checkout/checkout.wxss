@@ -1,0 +1,175 @@
+.address-card {
+  cursor: pointer;
+}
+
+.address-content {
+  line-height: 1.6;
+}
+
+.address-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8rpx;
+}
+
+.address-name {
+  font-size: 30rpx;
+  font-weight: bold;
+  color: #333;
+  margin-right: 24rpx;
+}
+
+.address-phone {
+  font-size: 26rpx;
+  color: #666;
+}
+
+.address-detail {
+  font-size: 26rpx;
+  color: #999;
+}
+
+.address-empty {
+  display: flex;
+  align-items: center;
+  font-size: 28rpx;
+  color: #999;
+}
+
+.address-icon {
+  margin-right: 12rpx;
+  font-size: 36rpx;
+}
+
+.address-arrow {
+  margin-left: auto;
+  font-size: 36rpx;
+  color: #ccc;
+}
+
+/* 商品清单 */
+.card-title {
+  font-size: 28rpx;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 20rpx;
+  padding-bottom: 16rpx;
+  border-bottom: 1rpx solid #f0f0f0;
+}
+
+.item-row {
+  display: flex;
+  align-items: center;
+  padding: 12rpx 0;
+}
+
+.item-row + .item-row {
+  border-top: 1rpx solid #f8f8f8;
+}
+
+.item-img {
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 10rpx;
+  background: #f8f8f8;
+  flex-shrink: 0;
+}
+
+.item-info {
+  flex: 1;
+  margin-left: 16rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100rpx;
+}
+
+.item-name {
+  font-size: 26rpx;
+  color: #333;
+}
+
+.item-price {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.item-price .price {
+  font-size: 28rpx;
+}
+
+.qty {
+  font-size: 24rpx;
+  color: #999;
+}
+
+/* 价格 */
+.price-card {
+  margin-top: 0;
+}
+
+.price-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12rpx 0;
+  font-size: 26rpx;
+  color: #666;
+}
+
+.price-row.total {
+  border-top: 1rpx solid #f0f0f0;
+  padding-top: 16rpx;
+  margin-top: 8rpx;
+}
+
+.price-row .price {
+  font-size: 28rpx;
+}
+
+.total-price {
+  font-size: 34rpx !important;
+}
+
+.free {
+  color: #4caf50;
+  font-size: 26rpx;
+}
+
+/* 底部 */
+.bottom-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  background: #fff;
+  padding: 16rpx 24rpx;
+  box-shadow: 0 -2rpx 12rpx rgba(0,0,0,0.06);
+  z-index: 100;
+  padding-bottom: calc(16rpx + env(safe-area-inset-bottom));
+}
+
+.total-wrap {
+  flex: 1;
+}
+
+.total-label {
+  font-size: 26rpx;
+  color: #333;
+}
+
+.total-wrap .price-value {
+  font-size: 38rpx;
+}
+
+.btn-submit {
+  padding: 20rpx 48rpx;
+  background: linear-gradient(135deg, #ff5777, #ff8a80);
+  color: #fff;
+  font-size: 30rpx;
+  font-weight: bold;
+  border-radius: 44rpx;
+}

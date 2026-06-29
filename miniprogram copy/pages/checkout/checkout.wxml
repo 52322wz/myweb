@@ -1,0 +1,62 @@
+<view class="container">
+  <!-- 收货地址 -->
+  <view class="address-card card" bindtap="onChooseAddress">
+    <view class="address-content" wx:if="{{address}}">
+      <view class="address-header">
+        <text class="address-name">{{address.name}}</text>
+        <text class="address-phone">{{address.phone}}</text>
+      </view>
+      <view class="address-detail">{{address.region}} {{address.detail}}</view>
+    </view>
+    <view class="address-empty" wx:else>
+      <text class="address-icon">📍</text>
+      <text>请选择收货地址</text>
+      <text class="address-arrow">›</text>
+    </view>
+  </view>
+
+  <!-- 商品清单 -->
+  <view class="items-card card">
+    <view class="card-title">商品清单</view>
+    <view class="item-row" wx:for="{{items}}" wx:key="id">
+      <image class="item-img" src="{{item.image}}" mode="aspectFill" />
+      <view class="item-info">
+        <view class="item-name text-ellipsis">{{item.name}}</view>
+        <view class="item-price">
+          <text class="price">¥{{item.price}}</text>
+          <text class="qty">×{{item.quantity}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 价格明细 -->
+  <view class="price-card card">
+    <view class="price-row">
+      <text>商品合计</text>
+      <text class="price">¥{{totalPrice.toFixed(2)}}</text>
+    </view>
+    <view class="price-row">
+      <text>运费</text>
+      <text class="free">免运费</text>
+    </view>
+    <view class="price-row total">
+      <text>应付总额</text>
+      <text class="price total-price">¥{{totalPrice.toFixed(2)}}</text>
+    </view>
+  </view>
+
+  <!-- 底部提交 -->
+  <view class="bottom-bar">
+    <view class="total-wrap">
+      <text class="total-label">合计：</text>
+      <text class="price">
+        <text class="price-symbol">¥</text>
+        <text class="price-value">{{totalPrice.toFixed(2)}}</text>
+      </text>
+    </view>
+    <view class="btn-submit" bindtap="onSubmit">提交订单</view>
+  </view>
+
+  <view style="height: 120rpx;"></view>
+</view>

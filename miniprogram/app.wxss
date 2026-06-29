@@ -1,0 +1,106 @@
+/* ========== Apple Design — 全局样式 ========== */
+
+page {
+  --blue: #007AFF;
+  --blue-dark: #0056CC;
+  --green: #34C759;
+  --orange: #FF9500;
+  --red: #FF3B30;
+  --bg: #F2F2F7;
+  --card: #FFFFFF;
+  --text: #1C1C1E;
+  --text-secondary: #8E8E93;
+  --text-tertiary: #C7C7CC;
+  --separator: #E5E5EA;
+
+  font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', sans-serif;
+  font-size: 28rpx;
+  color: #1C1C1E;
+  background-color: #F2F2F7;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* 通用容器 */
+.container {
+  min-height: 100vh;
+  background-color: #F2F2F7;
+  padding-bottom: 20rpx;
+}
+
+/* 弹性布局 */
+.flex { display: flex; }
+.flex-center { display: flex; align-items: center; justify-content: center; }
+.flex-between { display: flex; align-items: center; justify-content: space-between; }
+.flex-column { display: flex; flex-direction: column; }
+.flex-1 { flex: 1; }
+
+/* 文字 */
+.text-ellipsis { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.text-center { text-align: center; }
+.text-primary { color: #007AFF; }
+.text-secondary { color: #8E8E93; }
+.text-light { color: #C7C7CC; }
+
+/* 间距 */
+.mt-10 { margin-top: 10rpx; }
+.mt-20 { margin-top: 20rpx; }
+.mb-10 { margin-bottom: 10rpx; }
+.mb-20 { margin-bottom: 20rpx; }
+.p-20 { padding: 20rpx; }
+.p-30 { padding: 30rpx; }
+
+/* 卡片 — Apple 风格：白底、小圆角、极淡阴影 */
+.card {
+  background: #FFFFFF;
+  border-radius: 20rpx;
+  padding: 24rpx;
+  margin: 16rpx 20rpx;
+  box-shadow: 0 1rpx 4rpx rgba(0,0,0,0.04);
+}
+
+/* 按钮 */
+.btn-primary {
+  background: #007AFF;
+  color: #fff;
+  border: none;
+  border-radius: 24rpx;
+  font-size: 30rpx;
+  font-weight: 600;
+  padding: 22rpx 40rpx;
+  text-align: center;
+  letter-spacing: 0.5rpx;
+}
+.btn-primary:active { opacity: 0.7; transform: scale(0.98); }
+
+.btn-outline {
+  background: transparent;
+  color: #007AFF;
+  border: 2rpx solid #007AFF;
+  border-radius: 24rpx;
+  font-size: 28rpx;
+  font-weight: 500;
+  padding: 16rpx 32rpx;
+  text-align: center;
+}
+
+/* 价格 */
+.price { color: #FF3B30; font-weight: 700; }
+.price-symbol { font-size: 22rpx; }
+.price-value { font-size: 34rpx; }
+.original-price { color: #C7C7CC; font-size: 22rpx; text-decoration: line-through; margin-left: 8rpx; }
+
+/* 空状态 */
+.empty { display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 160rpx 0; }
+.empty-icon { font-size: 80rpx; margin-bottom: 24rpx; opacity: 0.6; }
+.empty-text { font-size: 28rpx; color: #8E8E93; font-weight: 500; }
+.empty-sub { font-size: 24rpx; color: #C7C7CC; margin-top: 8rpx; }
+
+/* 标签 */
+.tag { display: inline-block; font-size: 20rpx; padding: 4rpx 10rpx; border-radius: 8rpx; font-weight: 600; }
+.tag-red { background: #FFEBEB; color: #FF3B30; }
+.tag-blue { background: #EBF5FF; color: #007AFF; }
+.tag-green { background: #EBFFF0; color: #34C759; }
+
+/* 分割线 */
+.separator { height: 1rpx; background: #E5E5EA; margin: 0 20rpx; }

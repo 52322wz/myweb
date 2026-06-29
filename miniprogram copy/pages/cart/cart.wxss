@@ -1,0 +1,149 @@
+.cart-item {
+  display: flex;
+  align-items: center;
+  background: #fff;
+  padding: 20rpx;
+  margin: 0 20rpx 12rpx;
+  border-radius: 16rpx;
+  box-shadow: 0 2rpx 8rpx rgba(0,0,0,0.04);
+}
+
+.checkbox {
+  margin-right: 16rpx;
+}
+
+.check-icon {
+  font-size: 40rpx;
+  color: #ccc;
+}
+
+.check-icon.checked {
+  color: #ff5777;
+}
+
+.item-img {
+  width: 160rpx;
+  height: 160rpx;
+  border-radius: 12rpx;
+  background: #f8f8f8;
+  flex-shrink: 0;
+}
+
+.item-info {
+  flex: 1;
+  margin-left: 16rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 160rpx;
+}
+
+.item-name {
+  font-size: 28rpx;
+  color: #333;
+  line-height: 1.4;
+}
+
+.item-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.item-bottom .price {
+  font-size: 30rpx;
+}
+
+.stepper {
+  display: flex;
+  align-items: center;
+}
+
+.stepper-btn {
+  width: 48rpx;
+  height: 48rpx;
+  border: 2rpx solid #ddd;
+  border-radius: 8rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28rpx;
+  color: #666;
+  background: #fafafa;
+}
+
+.stepper-value {
+  width: 60rpx;
+  text-align: center;
+  font-size: 26rpx;
+  color: #333;
+}
+
+.delete-btn {
+  padding: 10rpx;
+  font-size: 32rpx;
+  color: #ccc;
+  margin-left: 8rpx;
+}
+
+/* 底部栏 */
+.bottom-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  background: #fff;
+  padding: 16rpx 24rpx;
+  box-shadow: 0 -2rpx 12rpx rgba(0,0,0,0.06);
+  z-index: 100;
+  padding-bottom: calc(16rpx + env(safe-area-inset-bottom));
+}
+
+.select-all {
+  display: flex;
+  align-items: center;
+  font-size: 26rpx;
+  color: #666;
+  margin-right: 20rpx;
+}
+
+.select-all .check-icon {
+  margin-right: 8rpx;
+}
+
+.total-wrap {
+  flex: 1;
+  text-align: right;
+  margin-right: 20rpx;
+}
+
+.total-label {
+  font-size: 26rpx;
+  color: #333;
+}
+
+.total-wrap .price-value {
+  font-size: 36rpx;
+}
+
+.btn-checkout {
+  padding: 16rpx 40rpx;
+  background: linear-gradient(135deg, #ff5777, #ff8a80);
+  color: #fff;
+  font-size: 28rpx;
+  font-weight: bold;
+  border-radius: 44rpx;
+}
+
+.btn-checkout.disabled {
+  background: #ccc;
+  opacity: 0.6;
+}
+
+.empty-sub {
+  font-size: 24rpx;
+  color: #ccc;
+  margin-top: 8rpx;
+}

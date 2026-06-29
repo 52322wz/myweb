@@ -1,0 +1,154 @@
+.tab-bar {
+  display: flex;
+  background: #fff;
+  padding: 0 20rpx;
+  border-bottom: 1rpx solid #f0f0f0;
+}
+
+.tab-item {
+  flex: 1;
+  text-align: center;
+  padding: 24rpx 0;
+  font-size: 28rpx;
+  color: #666;
+  position: relative;
+}
+
+.tab-item.active {
+  color: #ff5777;
+  font-weight: bold;
+}
+
+.tab-item.active::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 48rpx;
+  height: 4rpx;
+  background: #ff5777;
+  border-radius: 2rpx;
+}
+
+/* 订单卡片 */
+.order-card {
+  margin: 16rpx 20rpx;
+  padding: 0;
+}
+
+.order-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20rpx 20rpx 12rpx;
+  border-bottom: 1rpx solid #f8f8f8;
+}
+
+.order-id {
+  font-size: 24rpx;
+  color: #999;
+}
+
+.order-status {
+  font-size: 24rpx;
+  padding: 4rpx 16rpx;
+  border-radius: 20rpx;
+}
+
+.order-status.pending {
+  color: #ff8c00;
+  background: #fff8f0;
+}
+
+.order-status.completed {
+  color: #4caf50;
+  background: #f0fff0;
+}
+
+.order-items {
+  padding: 0 20rpx;
+}
+
+.order-item {
+  display: flex;
+  align-items: center;
+  padding: 12rpx 0;
+}
+
+.order-item + .order-item {
+  border-top: 1rpx solid #fcfcfc;
+}
+
+.item-img {
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 8rpx;
+  background: #f8f8f8;
+  flex-shrink: 0;
+}
+
+.item-info {
+  flex: 1;
+  margin-left: 12rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 80rpx;
+}
+
+.item-name {
+  font-size: 24rpx;
+  color: #333;
+}
+
+.item-price {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.item-price .price {
+  font-size: 24rpx;
+}
+
+.qty {
+  font-size: 22rpx;
+  color: #999;
+}
+
+.order-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16rpx 20rpx;
+  border-top: 1rpx solid #f8f8f8;
+}
+
+.order-time {
+  font-size: 22rpx;
+  color: #bbb;
+}
+
+.order-total {
+  font-size: 26rpx;
+  color: #333;
+}
+
+.order-total .price {
+  font-size: 28rpx;
+}
+
+.order-actions {
+  display: flex;
+  justify-content: flex-end;
+  padding: 0 20rpx 20rpx;
+}
+
+.btn-pay {
+  padding: 12rpx 32rpx;
+  background: linear-gradient(135deg, #ff5777, #ff8a80);
+  color: #fff;
+  font-size: 26rpx;
+  border-radius: 36rpx;
+}

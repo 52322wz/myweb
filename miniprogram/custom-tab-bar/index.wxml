@@ -1,0 +1,40 @@
+<view class="tab-bar">
+  <view
+    class="tab-item {{selected === index ? 'active' : ''}}"
+    wx:for="{{list}}"
+    wx:key="index"
+    data-index="{{index}}"
+    bindtap="switchTab"
+  >
+    <!-- 首页图标 -->
+    <view class="icon-wrap" wx:if="{{item.icon === 'home'}}">
+      <view class="home-roof"></view>
+      <view class="home-body"></view>
+    </view>
+
+    <!-- 购物车图标 -->
+    <view class="icon-wrap" wx:if="{{item.icon === 'cart'}}">
+      <view class="cart-bag">
+        <view class="cart-handle"></view>
+      </view>
+      <view class="cart-badge" wx:if="{{badge > 0 && index === 1}}">{{badge > 99 ? '99+' : badge}}</view>
+    </view>
+
+    <!-- 订单图标 -->
+    <view class="icon-wrap" wx:if="{{item.icon === 'orders'}}">
+      <view class="receipt">
+        <view class="receipt-line"></view>
+        <view class="receipt-line short"></view>
+        <view class="receipt-line short"></view>
+      </view>
+    </view>
+
+    <!-- 我的图标 -->
+    <view class="icon-wrap" wx:if="{{item.icon === 'my'}}">
+      <view class="person-head"></view>
+      <view class="person-body"></view>
+    </view>
+
+    <text class="tab-text">{{item.text}}</text>
+  </view>
+</view>

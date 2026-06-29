@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "Mini商城",
+  "usingComponents": {
+    "product-card": "/components/product-card/product-card"
+  }
+}

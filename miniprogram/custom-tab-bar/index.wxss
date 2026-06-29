@@ -1,0 +1,177 @@
+.tab-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(20rpx);
+  -webkit-backdrop-filter: blur(20rpx);
+  border-top: 0.5px solid rgba(0, 0, 0, 0.1);
+  padding-bottom: env(safe-area-inset-bottom);
+  z-index: 999;
+}
+
+.tab-item {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 10rpx 0 6rpx;
+  transition: all 0.2s;
+}
+
+.tab-text {
+  font-size: 20rpx;
+  color: #8E8E93;
+  margin-top: 6rpx;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+.tab-item.active .tab-text {
+  color: #007AFF;
+  font-weight: 600;
+}
+
+/* ===== 图标容器 ===== */
+.icon-wrap {
+  width: 50rpx;
+  height: 50rpx;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ===== 首页图标 — 房子 ===== */
+.home-roof {
+  position: absolute;
+  top: 6rpx;
+  width: 0;
+  height: 0;
+  border-left: 20rpx solid transparent;
+  border-right: 20rpx solid transparent;
+  border-bottom: 16rpx solid #8E8E93;
+  transition: border-bottom-color 0.2s;
+}
+.tab-item.active .home-roof {
+  border-bottom-color: #007AFF;
+}
+
+.home-body {
+  position: absolute;
+  bottom: 8rpx;
+  width: 28rpx;
+  height: 18rpx;
+  background: #8E8E93;
+  border-radius: 3rpx 3rpx 0 0;
+  transition: background 0.2s;
+}
+.tab-item.active .home-body {
+  background: #007AFF;
+}
+
+/* ===== 购物车图标 — 袋子 ===== */
+.cart-bag {
+  position: relative;
+  width: 34rpx;
+  height: 30rpx;
+  background: #8E8E93;
+  border-radius: 6rpx;
+  transition: background 0.2s;
+}
+.tab-item.active .cart-bag {
+  background: #007AFF;
+}
+
+.cart-handle {
+  position: absolute;
+  top: -8rpx;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 18rpx;
+  height: 10rpx;
+  border: 3rpx solid #8E8E93;
+  border-bottom: none;
+  border-radius: 6rpx 6rpx 0 0;
+  transition: border-color 0.2s;
+}
+.tab-item.active .cart-handle {
+  border-color: #007AFF;
+}
+
+.cart-badge {
+  position: absolute;
+  top: -4rpx;
+  right: 2rpx;
+  min-width: 32rpx;
+  height: 32rpx;
+  line-height: 32rpx;
+  text-align: center;
+  background: #FF3B30;
+  color: #fff;
+  font-size: 18rpx;
+  font-weight: 700;
+  border-radius: 16rpx;
+  padding: 0 6rpx;
+  z-index: 10;
+}
+
+/* ===== 订单图标 — 收据 ===== */
+.receipt {
+  position: relative;
+  width: 28rpx;
+  height: 34rpx;
+  background: #8E8E93;
+  border-radius: 4rpx;
+  padding: 8rpx 6rpx;
+  box-sizing: border-box;
+  transition: background 0.2s;
+}
+.tab-item.active .receipt {
+  background: #007AFF;
+}
+
+.receipt-line {
+  width: 100%;
+  height: 3rpx;
+  background: #fff;
+  border-radius: 2rpx;
+  margin-bottom: 5rpx;
+}
+.receipt-line.short {
+  width: 60%;
+}
+
+/* ===== 我的图标 — 人物 ===== */
+.person-head {
+  position: absolute;
+  top: 4rpx;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 20rpx;
+  height: 20rpx;
+  background: #8E8E93;
+  border-radius: 50%;
+  transition: background 0.2s;
+}
+.tab-item.active .person-head {
+  background: #007AFF;
+}
+
+.person-body {
+  position: absolute;
+  bottom: 4rpx;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 34rpx;
+  height: 18rpx;
+  background: #8E8E93;
+  border-radius: 16rpx 16rpx 4rpx 4rpx;
+  transition: background 0.2s;
+}
+.tab-item.active .person-body {
+  background: #007AFF;
+}

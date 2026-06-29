@@ -1,0 +1,137 @@
+/* 用户头部 */
+.user-header {
+  background: linear-gradient(135deg, #ff5777, #ff8a80);
+  padding: 60rpx 40rpx 50rpx;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+}
+
+.avatar {
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 50%;
+  border: 4rpx solid rgba(255,255,255,0.5);
+  background: rgba(255,255,255,0.2);
+}
+
+.avatar-placeholder {
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 60rpx;
+}
+
+.user-text {
+  margin-left: 24rpx;
+}
+
+.user-name {
+  font-size: 36rpx;
+  font-weight: bold;
+  color: #fff;
+  margin-bottom: 8rpx;
+}
+
+.user-desc {
+  font-size: 24rpx;
+  color: rgba(255,255,255,0.8);
+}
+
+/* 订单区域 */
+.section-header {
+  margin-bottom: 20rpx;
+}
+
+.section-title {
+  font-size: 30rpx;
+  font-weight: bold;
+  color: #333;
+}
+
+.section-more {
+  font-size: 24rpx;
+  color: #999;
+}
+
+.order-grid {
+  display: flex;
+  justify-content: space-around;
+}
+
+.order-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.order-icon {
+  font-size: 48rpx;
+  margin-bottom: 8rpx;
+}
+
+.order-label {
+  font-size: 24rpx;
+  color: #666;
+}
+
+.order-count {
+  position: absolute;
+  top: -8rpx;
+  right: -16rpx;
+  min-width: 32rpx;
+  height: 32rpx;
+  line-height: 32rpx;
+  text-align: center;
+  background: #ff5777;
+  color: #fff;
+  font-size: 20rpx;
+  border-radius: 16rpx;
+  padding: 0 8rpx;
+}
+
+.order-count.pending {
+  background: #ff8c00;
+}
+
+.order-count.completed {
+  background: #4caf50;
+}
+
+/* 服务列表 */
+.service-section {
+  margin-top: 0;
+}
+
+.service-item {
+  display: flex;
+  align-items: center;
+  padding: 24rpx 0;
+}
+
+.service-item + .service-item {
+  border-top: 1rpx solid #f5f5f5;
+}
+
+.service-icon {
+  font-size: 36rpx;
+  margin-right: 20rpx;
+}
+
+.service-label {
+  flex: 1;
+  font-size: 28rpx;
+  color: #333;
+}
+
+.service-arrow {
+  font-size: 32rpx;
+  color: #ccc;
+}

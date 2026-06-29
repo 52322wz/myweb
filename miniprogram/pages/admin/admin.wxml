@@ -1,0 +1,65 @@
+<view class="container">
+  <!-- 顶部信息栏 -->
+  <view class="admin-header">
+    <view class="admin-info">
+      <text class="admin-icon">🛡️</text>
+      <view>
+        <text class="admin-label">卖家管理后台</text>
+        <text class="admin-hint">密码：{{sellerPassword}}</text>
+      </view>
+    </view>
+    <view class="header-actions">
+      <text class="action-btn" bindtap="onChangePassword">改密</text>
+      <text class="action-btn logout" bindtap="onLogout">退出</text>
+    </view>
+  </view>
+
+  <!-- Tab 切换 -->
+  <view class="tab-bar">
+    <view
+      class="tab-item {{activeTab === item.key ? 'active' : ''}}"
+      wx:for="{{tabs}}"
+      wx:key="key"
+      data-key="{{item.key}}"
+      bindtap="onTabTap"
+    >{{item.label}} ({{orders.length}})</view>
+  </view>
+
+  <!-- 订单列表 -->
+  <view class="order-list" wx:if="{{!isEmpty}}">
+    <view class="order-card card" wx:for="{{orders}}" wx:key="orderId">
+      <view class="order-header">
+        <view>
+          <text class="buyer-name">👤 {{item.buyerName || '未知买家'}}</text>
+        </view>
+        <text class="order-status {{item.status}}">{{item.status === 'pending' ? '待付款' : '已完成'}}</text>
+      </view>
+      <view class="order-body">
+        <view class="order-item" wx:for="{{item.items}}" wx:key="id" wx:for-item="p">
+          <image class="item-img" src="{{p.image}}" mode="aspectFill" />
+          <view class="item-info">
+            <text class="item-name text-ellipsis">{{p.name}}</text>
+            <text class="item-price">¥{{p.price}} × {{p.quantity}}</text>
+          </view>
+        </view>
+      </view>
+      <view class="order-footer">
+        <text class="order-time">{{item.createTime}}</text>
+        <text class="order-total">合计：<text class="price">¥{{item.totalPriceText}}</text></text>
+      </view>
+      <view class="order-actions" wx:if="{{item.status === 'pending'}}">
+        <view class="btn-detail" data-order="{{item}}" bindtap="onDetail">详情</view>
+        <view class="btn-complete" data-order-id="{{item.orderId}}" bindtap="onComplete">标记完成</view>
+      </view>
+      <view class="order-actions" wx:else>
+        <view class="btn-detail" data-order="{{item}}" bindtap="onDetail">详情</view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 空状态 -->
+  <view class="empty" wx:else>
+    <text class="empty-icon">📭</text>
+    <text class="empty-text">暂无订单</text>
+  </view>
+</view>

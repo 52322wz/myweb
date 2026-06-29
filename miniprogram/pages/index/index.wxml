@@ -1,0 +1,36 @@
+<view class="container">
+  <!-- 搜索栏 -->
+  <view class="search-bar">
+    <view class="search-input-wrap">
+      <text class="search-icon">🔍</text>
+      <input class="search-input" placeholder="搜索商品" value="{{searchKeyword}}" bindinput="onSearchInput" confirm-type="search" />
+      <text class="clear-btn" wx:if="{{searchKeyword}}" bindtap="onClearSearch">✕</text>
+    </view>
+  </view>
+
+  <!-- 分类 Tab -->
+  <scroll-view class="category-bar" scroll-x enhanced show-scrollbar="{{false}}">
+    <view class="flex-row">
+      <view
+        class="category-item {{activeCategory === item ? 'active' : ''}}"
+        wx:for="{{categories}}"
+        wx:key="*this"
+        data-category="{{item}}"
+        bindtap="onCategoryTap"
+      >{{item}}</view>
+    </view>
+  </scroll-view>
+
+  <!-- 商品列表 -->
+  <view class="product-grid" wx:if="{{products.length > 0}}">
+    <view class="product-col" wx:for="{{products}}" wx:key="id">
+      <product-card product="{{item}}" bind:tap="onProductTap" bind:addtocart="onAddToCart" />
+    </view>
+  </view>
+
+  <!-- 空状态 -->
+  <view class="empty" wx:else>
+    <text class="empty-icon">📦</text>
+    <text class="empty-text">暂无相关商品</text>
+  </view>
+</view>

@@ -1,0 +1,61 @@
+<view class="container">
+  <!-- 购物车列表 -->
+  <view class="cart-list" wx:if="{{!isEmpty}}">
+    <view class="cart-item" wx:for="{{cart}}" wx:key="id">
+      <!-- 选择框 -->
+      <view class="checkbox" data-id="{{item.id}}" bindtap="onToggleItem">
+        <text class="check-icon {{item.selected ? 'checked' : ''}}">
+          {{item.selected ? '✓' : '○'}}
+        </text>
+      </view>
+      <!-- 商品图片 -->
+      <image class="item-img" src="{{item.image}}" mode="aspectFill" />
+      <!-- 商品信息 -->
+      <view class="item-info">
+        <view class="item-name text-ellipsis">{{item.name}}</view>
+        <view class="item-bottom">
+          <text class="price">
+            <text class="price-symbol">¥</text>{{item.price}}
+          </text>
+          <view class="stepper">
+            <view class="stepper-btn" data-id="{{item.id}}" bindtap="onMinus">−</view>
+            <view class="stepper-value">{{item.quantity}}</view>
+            <view class="stepper-btn" data-id="{{item.id}}" bindtap="onPlus">+</view>
+          </view>
+        </view>
+      </view>
+      <!-- 删除 -->
+      <view class="delete-btn" data-id="{{item.id}}" bindtap="onDelete">
+        <text>🗑</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- 空状态 -->
+  <view class="empty" wx:else>
+    <text class="empty-icon">🛒</text>
+    <text class="empty-text">购物车还是空的</text>
+    <text class="empty-sub">去逛逛吧~</text>
+  </view>
+
+  <!-- 底部结算栏 -->
+  <view class="bottom-bar" wx:if="{{!isEmpty}}">
+    <view class="select-all" bindtap="onToggleAll">
+      <text class="check-icon {{allSelected ? 'checked' : ''}}">{{allSelected ? '✓' : '○'}}</text>
+      <text>全选</text>
+    </view>
+    <view class="total-wrap">
+      <text class="total-label">合计：</text>
+      <text class="price">
+        <text class="price-symbol">¥</text>
+        <text class="price-value">{{totalPriceText}}</text>
+      </text>
+    </view>
+    <view class="btn-checkout {{totalPrice > 0 ? '' : 'disabled'}}" bindtap="onCheckout">
+      去结算
+    </view>
+  </view>
+
+  <!-- 安全区 -->
+  <view style="height: 120rpx;"></view>
+</view>

@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { Moon, Sun, LogIn, LogOut, Image } from 'lucide-react'
+import { Moon, Sun, LogIn, LogOut, Image, Settings } from 'lucide-react'
 import { useTheme } from '../common/ThemeProvider.jsx'
 import { useAuth } from '../../contexts/AuthContext.jsx'
 
@@ -19,7 +19,7 @@ export default function Navbar() {
         </Link>
 
         <div className="flex items-center gap-1">
-          {/* Portfolio link */}
+          {/* Portfolio */}
           <Link
             to="/portfolio"
             className="w-9 h-9 flex items-center justify-center rounded-full
@@ -30,6 +30,20 @@ export default function Navbar() {
           >
             <Image size={17} />
           </Link>
+
+          {/* Admin (only when logged in) */}
+          {isAuthenticated && (
+            <Link
+              to="/admin"
+              className="w-9 h-9 flex items-center justify-center rounded-full
+                         text-black/50 dark:text-white/50
+                         hover:bg-black/5 dark:hover:bg-white/10
+                         transition-colors"
+              aria-label="数据管理"
+            >
+              <Settings size={17} />
+            </Link>
+          )}
 
           {/* Login / Logout */}
           {isAuthenticated ? (

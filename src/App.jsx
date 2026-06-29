@@ -2,9 +2,11 @@ import { Routes, Route } from 'react-router-dom'
 import { ThemeProvider } from './components/common/ThemeProvider.jsx'
 import { AuthProvider } from './contexts/AuthContext.jsx'
 import Layout from './components/Layout/Layout.jsx'
+import AIChat from './components/sections/AIChat.jsx'
 import Home from './pages/Home.jsx'
 import Login from './pages/Login.jsx'
 import PortfolioPage from './pages/PortfolioPage.jsx'
+import Admin from './pages/Admin.jsx'
 
 function App() {
   return (
@@ -15,8 +17,10 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/login" element={<Login />} />
             <Route path="/portfolio" element={<PortfolioPage />} />
+            <Route path="/admin" element={<Admin />} />
           </Routes>
         </Layout>
+        <AIChat />
       </AuthProvider>
     </ThemeProvider>
   )
