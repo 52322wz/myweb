@@ -1,6 +1,7 @@
 import PhotoWall from '../components/sections/PhotoWall.jsx'
 import ContactSection from '../components/sections/ContactSection.jsx'
 import PortfolioPreview from '../components/sections/PortfolioPreview.jsx'
+import AISection from '../components/sections/AISection.jsx'
 
 export default function Home() {
   return (
@@ -23,6 +24,9 @@ export default function Home() {
           </div>
         </div>
       </div>
+
+      {/* --- AI Section --- */}
+      <AISection />
     </div>
   )
 }
