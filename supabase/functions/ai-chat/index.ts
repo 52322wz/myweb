@@ -1,9 +1,9 @@
 import "jsr:@supabase/functions-js/edge-runtime.d.ts"
 import { createClient } from "jsr:@supabase/supabase-js@2"
 
-const supabaseUrl = Deno.env.get("SUPABASE_URL")!
-const supabaseServiceKey = Deno.env.get("SUPABASE_SERVICE_ROLE_KEY")!
-const deepseekKey = Deno.env.get("DEEPSEEK_API_KEY")!
+const supabaseUrl = "YOUR_SUPABASE_URL"
+const supabaseServiceKey = "YOUR_SERVICE_ROLE_KEY"
+const deepseekKey = "YOUR_DEEPSEEK_API_KEY"
 
 const supabase = createClient(supabaseUrl, supabaseServiceKey)
 
